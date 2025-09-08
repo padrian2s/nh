@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+    <!-- Allow cleartext for specific domains if needed -->
+    <domain-config cleartextTrafficPermitted="true">
+        <!-- Add specific domains that need HTTP here -->
+        <domain includeSubdomains="true">example.com</domain>
+    </domain-config>
+    
+    <!-- Default configuration for all other domains -->
+    <base-config cleartextTrafficPermitted="false">
+        <trust-anchors>
+            <certificates src="system" />
+        </trust-anchors>
+    </base-config>
+</network-security-config>
