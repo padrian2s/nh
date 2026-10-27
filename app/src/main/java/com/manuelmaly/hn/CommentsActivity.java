@@ -47,6 +47,7 @@ import com.manuelmaly.hn.task.ITaskFinishedHandler;
 import com.manuelmaly.hn.util.DisplayHelper;
 import com.manuelmaly.hn.util.FileUtil;
 import com.manuelmaly.hn.util.FontHelper;
+import com.manuelmaly.hn.util.ThemeHelper;
 import com.manuelmaly.hn.util.SpotlightActivity;
 import com.manuelmaly.hn.util.ViewedUtils;
 
@@ -398,13 +399,13 @@ public class CommentsActivity extends BaseListActivity implements
                     mCommentLevelIndentPx / 2, mCommentLevelIndentPx / 2,
                     mCommentLevelIndentPx / 2);
 
-            mCommentHeaderText.setTextColor(getResources().getColor(
-                    R.color.gray_comments_information));
+            mCommentHeaderText.setTextColor(ThemeHelper.getColor(this,
+                    R.attr.hnCommentInfo));
 
             // Make it look like the header is just another list item.
             View v = new View(this);
-            v.setBackgroundColor(getResources().getColor(
-                    R.color.gray_comments_divider));
+            v.setBackgroundColor(ThemeHelper.getColor(this,
+                    R.attr.hnDivider));
             v.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT, 1));
             mCommentHeader.addView(v);
             mCommentHeaderText.setVisibility(View.GONE);
@@ -680,8 +681,9 @@ public class CommentsActivity extends BaseListActivity implements
         public void setComment(HNComment comment, int commentLevelIndentPx,
                 Context c, int commentTextSize, int metadataTextSize) {
             textView.setTextSize(TypedValue.COMPLEX_UNIT_DIP, commentTextSize);
-            textView.setTextColor(comment.getColor());
-            textView.setLinkTextColor(comment.getColor());
+            int textColor = ThemeHelper.getCommentColor(c, comment.getColor());
+            textView.setTextColor(textColor);
+            textView.setLinkTextColor(textColor);
             textView.setText(Html.fromHtml(comment.getText()));
             textView.setMovementMethod(LinkMovementMethod.getInstance());
             authorView.setTextSize(TypedValue.COMPLEX_UNIT_DIP,
@@ -706,7 +708,9 @@ public class CommentsActivity extends BaseListActivity implements
                 spacer.setLayoutParams(new android.widget.LinearLayout.LayoutParams(
                         commentLevelIndentPx, LayoutParams.MATCH_PARENT));
                 int spacerAlpha = Math.max(70 - i * 10, 10);
-                spacer.setBackgroundColor(Color.argb(spacerAlpha, 0, 0, 0));
+                int spacerShade = ThemeHelper.isDarkTheme(c) ? 255 : 0;
+                spacer.setBackgroundColor(Color.argb(spacerAlpha, spacerShade,
+                        spacerShade, spacerShade));
                 spacersContainer.addView(spacer, i);
             }
         }

@@ -4,11 +4,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import androidx.appcompat.app.AppCompatActivity;
 
 import com.manuelmaly.hn.util.FontHelper;
 
-public class BaseListActivity extends AppCompatActivity {
+public class BaseListActivity extends ThemedActivity {
 
     private TextView mLoadingView;
 

@@ -4,8 +4,8 @@
         <item name="android:actionOverflowButtonStyle">@style/OverflowIconStyle</item>
         <item name="actionOverflowButtonStyle">@style/OverflowIconStyle</item>
         <item name="android:homeAsUpIndicator">@drawable/back</item>
-        <item name="android:actionBarItemBackground">@drawable/actionbar_button_bg</item>
-        <item name="actionBarItemBackground">@drawable/actionbar_button_bg</item>
+        <item name="android:actionBarItemBackground">?attr/hnActionBarItemBg</item>
+        <item name="actionBarItemBackground">?attr/hnActionBarItemBg</item>
         <item name="homeAsUpIndicator">@drawable/back</item>
         <item name="android:buttonStyle">@null</item>
     </style>
@@ -23,7 +23,7 @@
     <style name="ActionBar.White" parent="ActionBar">
         <item name="android:actionBarStyle">@style/ActionBarStyle.Back.White</item>
         <item name="actionBarStyle">@style/ActionBarStyle.Back.White</item>
-        <item name="android:actionBarItemBackground">@drawable/actionbar_button_bg_gray</item>
-        <item name="actionBarItemBackground">@drawable/actionbar_button_bg_gray</item>
+        <item name="android:actionBarItemBackground">?attr/hnArticleBarItemBg</item>
+        <item name="actionBarItemBackground">?attr/hnArticleBarItemBg</item>
     </style>
 </resources>

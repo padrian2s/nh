@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Color palette attributes, set per theme in palettes.xml -->
+    <attr name="hnIsDark" format="boolean" />
+    <attr name="hnBg" format="color" />
+    <attr name="hnDivider" format="color" />
+    <attr name="hnTitle" format="color" />
+    <attr name="hnTitleRead" format="color" />
+    <attr name="hnMeta" format="color" />
+    <attr name="hnSideBg" format="color" />
+    <attr name="hnBubbleText" format="color" />
+    <attr name="hnBubbleTint" format="color|reference" />
+    <attr name="hnPointsTint" format="color|reference" />
+    <attr name="hnEmptyText" format="color" />
+    <attr name="hnLoadMoreBg" format="color" />
+    <attr name="hnLoadMoreText" format="color" />
+    <attr name="hnCommentInfo" format="color" />
+    <attr name="hnCommentText" format="color" />
+    <attr name="hnActionBarBg" format="reference|color" />
+    <attr name="hnActionBarText" format="color" />
+    <attr name="hnArticleBarBg" format="reference|color" />
+    <attr name="hnArticleBarText" format="color" />
+    <attr name="hnActionBarItemBg" format="reference" />
+    <attr name="hnArticleBarItemBg" format="reference" />
+    <attr name="hnListSelector" format="reference" />
+    <attr name="hnRefreshTint" format="color" />
+    <attr name="hnActionBarIconTint" format="color|reference" />
+</resources>

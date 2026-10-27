@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--
+        Palettes are applied on top of each activity's theme at runtime
+        (see util/ThemeHelper). Classic keeps the original peach/orange look.
+    -->
+    <style name="Palette.Classic" parent="">
+        <item name="hnIsDark">false</item>
+        <item name="hnBg">@color/peach</item>
+        <item name="hnDivider">#f0dfce</item>
+        <item name="hnTitle">@color/dark_gray_post_title</item>
+        <item name="hnTitleRead">@color/gray_post_title_read</item>
+        <item name="hnMeta">#787067</item>
+        <item name="hnSideBg">#fbe9d8</item>
+        <item name="hnBubbleText">#716961</item>
+        <item name="hnBubbleTint">@null</item>
+        <item name="hnPointsTint">@null</item>
+        <item name="hnEmptyText">#c3b5a7</item>
+        <item name="hnLoadMoreBg">#c3b5a7</item>
+        <item name="hnLoadMoreText">#ffeddb</item>
+        <item name="hnCommentInfo">@color/gray_comments_information</item>
+        <item name="hnCommentText">#262321</item>
+        <item name="hnActionBarBg">@drawable/actionbar_bg_orange</item>
+        <item name="hnActionBarText">@android:color/white</item>
+        <item name="hnArticleBarBg">@drawable/actionbar_bg_bright</item>
+        <item name="hnArticleBarText">@color/gray_article_title</item>
+        <item name="hnRefreshTint">@color/dark_gray_post_title</item>
+        <item name="hnListSelector">@drawable/main_list_selector</item>
+        <item name="hnActionBarIconTint">@null</item>
+        <item name="hnActionBarItemBg">@drawable/actionbar_button_bg</item>
+        <item name="hnArticleBarItemBg">@drawable/actionbar_button_bg_gray</item>
+    </style>
+
+    <!-- Base for all dark palettes: same bar for main and article screens -->
+    <style name="Palette.Dark" parent="">
+        <item name="hnIsDark">true</item>
+        <item name="hnArticleBarBg">?attr/hnActionBarBg</item>
+        <item name="hnArticleBarText">?attr/hnActionBarText</item>
+        <item name="hnListSelector">@drawable/main_list_selector_dark</item>
+        <item name="hnActionBarIconTint">?attr/hnActionBarText</item>
+        <item name="hnActionBarItemBg">@drawable/actionbar_button_bg_dark</item>
+        <item name="hnArticleBarItemBg">@drawable/actionbar_button_bg_dark</item>
+    </style>
+
+    <style name="Palette.Dark.TokyoNight">
+        <item name="hnBg">#1a1b26</item>
+        <item name="hnDivider">#232433</item>
+        <item name="hnTitle">#c0caf5</item>
+        <item name="hnTitleRead">#565f89</item>
+        <item name="hnMeta">#9aa5ce</item>
+        <item name="hnSideBg">#16161e</item>
+        <item name="hnBubbleText">#7aa2f7</item>
+        <item name="hnBubbleTint">#292e42</item>
+        <item name="hnPointsTint">#292e42</item>
+        <item name="hnEmptyText">#565f89</item>
+        <item name="hnLoadMoreBg">#24283b</item>
+        <item name="hnLoadMoreText">#7aa2f7</item>
+        <item name="hnCommentInfo">#bb9af7</item>
+        <item name="hnCommentText">#a9b1d6</item>
+        <item name="hnActionBarBg">#16161e</item>
+        <item name="hnActionBarText">#7aa2f7</item>
+        <item name="hnRefreshTint">#7aa2f7</item>
+        <item name="android:statusBarColor">#16161e</item>
+        <item name="android:navigationBarColor">#16161e</item>
+        <item name="android:colorAccent">#7aa2f7</item>
+        <item name="colorAccent">#7aa2f7</item>
+    </style>
+
+    <style name="Palette.Dark.TokyoNightStorm">
+        <item name="hnBg">#24283b</item>
+        <item name="hnDivider">#2c3047</item>
+        <item name="hnTitle">#c0caf5</item>
+        <item name="hnTitleRead">#565f89</item>
+        <item name="hnMeta">#9aa5ce</item>
+        <item name="hnSideBg">#1f2335</item>
+        <item name="hnBubbleText">#7dcfff</item>
+        <item name="hnBubbleTint">#3b4261</item>
+        <item name="hnPointsTint">#3b4261</item>
+        <item name="hnEmptyText">#565f89</item>
+        <item name="hnLoadMoreBg">#2f3549</item>
+        <item name="hnLoadMoreText">#7dcfff</item>
+        <item name="hnCommentInfo">#7aa2f7</item>
+        <item name="hnCommentText">#a9b1d6</item>
+        <item name="hnActionBarBg">#1f2335</item>
+        <item name="hnActionBarText">#7dcfff</item>
+        <item name="hnRefreshTint">#7dcfff</item>
+        <item name="android:statusBarColor">#1f2335</item>
+        <item name="android:navigationBarColor">#1f2335</item>
+        <item name="android:colorAccent">#7dcfff</item>
+        <item name="colorAccent">#7dcfff</item>
+    </style>
+
+    <style name="Palette.Dark.Dracula">
+        <item name="hnBg">#282a36</item>
+        <item name="hnDivider">#323443</item>
+        <item name="hnTitle">#f8f8f2</item>
+        <item name="hnTitleRead">#6272a4</item>
+        <item name="hnMeta">#a4abcf</item>
+        <item name="hnSideBg">#21222c</item>
+        <item name="hnBubbleText">#bd93f9</item>
+        <item name="hnBubbleTint">#383a4a</item>
+        <item name="hnPointsTint">#383a4a</item>
+        <item name="hnEmptyText">#6272a4</item>
+        <item name="hnLoadMoreBg">#343746</item>
+        <item name="hnLoadMoreText">#bd93f9</item>
+        <item name="hnCommentInfo">#ff79c6</item>
+        <item name="hnCommentText">#e2e2dc</item>
+        <item name="hnActionBarBg">#21222c</item>
+        <item name="hnActionBarText">#bd93f9</item>
+        <item name="hnRefreshTint">#bd93f9</item>
+        <item name="android:statusBarColor">#21222c</item>
+        <item name="android:navigationBarColor">#21222c</item>
+        <item name="android:colorAccent">#bd93f9</item>
+        <item name="colorAccent">#bd93f9</item>
+    </style>
+
+    <style name="Palette.Dark.CatppuccinMocha">
+        <item name="hnBg">#1e1e2e</item>
+        <item name="hnDivider">#28283a</item>
+        <item name="hnTitle">#cdd6f4</item>
+        <item name="hnTitleRead">#6c7086</item>
+        <item name="hnMeta">#a6adc8</item>
+        <item name="hnSideBg">#181825</item>
+        <item name="hnBubbleText">#cba6f7</item>
+        <item name="hnBubbleTint">#313244</item>
+        <item name="hnPointsTint">#313244</item>
+        <item name="hnEmptyText">#6c7086</item>
+        <item name="hnLoadMoreBg">#313244</item>
+        <item name="hnLoadMoreText">#cba6f7</item>
+        <item name="hnCommentInfo">#89b4fa</item>
+        <item name="hnCommentText">#bac2de</item>
+        <item name="hnActionBarBg">#11111b</item>
+        <item name="hnActionBarText">#cba6f7</item>
+        <item name="hnRefreshTint">#cba6f7</item>
+        <item name="android:statusBarColor">#11111b</item>
+        <item name="android:navigationBarColor">#11111b</item>
+        <item name="android:colorAccent">#cba6f7</item>
+        <item name="colorAccent">#cba6f7</item>
+    </style>
+
+    <style name="Palette.Dark.GruvboxDark">
+        <item name="hnBg">#282828</item>
+        <item name="hnDivider">#32302f</item>
+        <item name="hnTitle">#ebdbb2</item>
+        <item name="hnTitleRead">#7c6f64</item>
+        <item name="hnMeta">#a89984</item>
+        <item name="hnSideBg">#1d2021</item>
+        <item name="hnBubbleText">#fe8019</item>
+        <item name="hnBubbleTint">#3c3836</item>
+        <item name="hnPointsTint">#3c3836</item>
+        <item name="hnEmptyText">#7c6f64</item>
+        <item name="hnLoadMoreBg">#3c3836</item>
+        <item name="hnLoadMoreText">#fe8019</item>
+        <item name="hnCommentInfo">#fabd2f</item>
+        <item name="hnCommentText">#d5c4a1</item>
+        <item name="hnActionBarBg">#1d2021</item>
+        <item name="hnActionBarText">#fe8019</item>
+        <item name="hnRefreshTint">#fe8019</item>
+        <item name="android:statusBarColor">#1d2021</item>
+        <item name="android:navigationBarColor">#1d2021</item>
+        <item name="android:colorAccent">#fe8019</item>
+        <item name="colorAccent">#fe8019</item>
+    </style>
+
+    <style name="Palette.Dark.Nord">
+        <item name="hnBg">#2e3440</item>
+        <item name="hnDivider">#353b49</item>
+        <item name="hnTitle">#eceff4</item>
+        <item name="hnTitleRead">#616e88</item>
+        <item name="hnMeta">#a3adbf</item>
+        <item name="hnSideBg">#292e39</item>
+        <item name="hnBubbleText">#88c0d0</item>
+        <item name="hnBubbleTint">#3b4252</item>
+        <item name="hnPointsTint">#3b4252</item>
+        <item name="hnEmptyText">#616e88</item>
+        <item name="hnLoadMoreBg">#3b4252</item>
+        <item name="hnLoadMoreText">#88c0d0</item>
+        <item name="hnCommentInfo">#81a1c1</item>
+        <item name="hnCommentText">#d8dee9</item>
+        <item name="hnActionBarBg">#242933</item>
+        <item name="hnActionBarText">#88c0d0</item>
+        <item name="hnRefreshTint">#88c0d0</item>
+        <item name="android:statusBarColor">#242933</item>
+        <item name="android:navigationBarColor">#242933</item>
+        <item name="android:colorAccent">#88c0d0</item>
+        <item name="colorAccent">#88c0d0</item>
+    </style>
+
+    <style name="Palette.Dark.OneDark">
+        <item name="hnBg">#282c34</item>
+        <item name="hnDivider">#2f343e</item>
+        <item name="hnTitle">#dcdfe4</item>
+        <item name="hnTitleRead">#5c6370</item>
+        <item name="hnMeta">#9da5b4</item>
+        <item name="hnSideBg">#21252b</item>
+        <item name="hnBubbleText">#61afef</item>
+        <item name="hnBubbleTint">#323842</item>
+        <item name="hnPointsTint">#323842</item>
+        <item name="hnEmptyText">#5c6370</item>
+        <item name="hnLoadMoreBg">#323842</item>
+        <item name="hnLoadMoreText">#61afef</item>
+        <item name="hnCommentInfo">#c678dd</item>
+        <item name="hnCommentText">#abb2bf</item>
+        <item name="hnActionBarBg">#21252b</item>
+        <item name="hnActionBarText">#61afef</item>
+        <item name="hnRefreshTint">#61afef</item>
+        <item name="android:statusBarColor">#21252b</item>
+        <item name="android:navigationBarColor">#21252b</item>
+        <item name="android:colorAccent">#61afef</item>
+        <item name="colorAccent">#61afef</item>
+    </style>
+
+    <style name="Palette.Dark.AmoledBlack">
+        <item name="hnBg">#000000</item>
+        <item name="hnDivider">#161616</item>
+        <item name="hnTitle">#e6e6e6</item>
+        <item name="hnTitleRead">#666666</item>
+        <item name="hnMeta">#8f8f8f</item>
+        <item name="hnSideBg">#000000</item>
+        <item name="hnBubbleText">#ff6600</item>
+        <item name="hnBubbleTint">#1c1c1c</item>
+        <item name="hnPointsTint">#1c1c1c</item>
+        <item name="hnEmptyText">#555555</item>
+        <item name="hnLoadMoreBg">#121212</item>
+        <item name="hnLoadMoreText">#ff6600</item>
+        <item name="hnCommentInfo">#ff8533</item>
+        <item name="hnCommentText">#cccccc</item>
+        <item name="hnActionBarBg">#000000</item>
+        <item name="hnActionBarText">#ff6600</item>
+        <item name="hnRefreshTint">#ff6600</item>
+        <item name="android:statusBarColor">#000000</item>
+        <item name="android:navigationBarColor">#000000</item>
+        <item name="android:colorAccent">#ff6600</item>
+        <item name="colorAccent">#ff6600</item>
+    </style>
+</resources>

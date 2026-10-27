@@ -5,11 +5,13 @@
 
     <item android:id="@+id/menu_share"
         android:icon="@drawable/share"
+        hn:iconTint="?attr/hnActionBarIconTint"
         android:title="@string/share_comments_url"
         hn:showAsAction="ifRoom" />
 
     <item android:id="@+id/menu_refresh"
         android:icon="@drawable/refresh"
+        hn:iconTint="?attr/hnActionBarIconTint"
         android:title="@string/refresh"
         hn:showAsAction="ifRoom" />
 </menu>

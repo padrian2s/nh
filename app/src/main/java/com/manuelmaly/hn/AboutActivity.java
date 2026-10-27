@@ -6,7 +6,6 @@ import android.text.method.LinkMovementMethod;
 import android.view.MenuItem;
 import android.widget.TextView;
 
-import androidx.appcompat.app.AppCompatActivity;
 
 import com.manuelmaly.hn.util.FontHelper;
 
@@ -15,7 +14,7 @@ import org.androidannotations.annotations.EActivity;
 import org.androidannotations.annotations.ViewById;
 
 @EActivity(R.layout.about)
-public class AboutActivity extends AppCompatActivity {
+public class AboutActivity extends ThemedActivity {
     
     @ViewById(R.id.about_hn)
     TextView mHNView;

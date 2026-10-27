@@ -37,6 +37,30 @@
         <item>@string/pref_htmlviewer_browser</item>
     </string-array>
 
+    <string name="pref_title_theme">Theme</string>
+    <string name="pref_theme_classic">Classic</string>
+    <string name="pref_theme_tokyonight">Tokyo Night</string>
+    <string name="pref_theme_tokyonight_storm">Tokyo Night Storm</string>
+    <string name="pref_theme_dracula">Dracula</string>
+    <string name="pref_theme_catppuccin">Catppuccin Mocha</string>
+    <string name="pref_theme_gruvbox">Gruvbox Dark</string>
+    <string name="pref_theme_nord">Nord</string>
+    <string name="pref_theme_onedark">One Dark</string>
+    <string name="pref_theme_amoled">AMOLED Black</string>
+    <string name="pref_default_theme">Classic</string>
+
+    <string-array name="pref_array_theme">
+        <item>@string/pref_theme_classic</item>
+        <item>@string/pref_theme_tokyonight</item>
+        <item>@string/pref_theme_tokyonight_storm</item>
+        <item>@string/pref_theme_dracula</item>
+        <item>@string/pref_theme_catppuccin</item>
+        <item>@string/pref_theme_gruvbox</item>
+        <item>@string/pref_theme_nord</item>
+        <item>@string/pref_theme_onedark</item>
+        <item>@string/pref_theme_amoled</item>
+    </string-array>
+
     <string name="pref_title_pulldownrefresh">Pull Down to Refresh</string>
     <bool name="pref_default_pulldownrefresh">false</bool>
 

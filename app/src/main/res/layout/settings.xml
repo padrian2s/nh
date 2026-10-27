@@ -8,7 +8,7 @@
         android:id="@+id/actionbar"
         android:layout_width="fill_parent"
         android:layout_height="48dp"
-        android:background="@drawable/actionbar_bg_orange"
+        android:background="?attr/hnActionBarBg"
         android:gravity="center" >
 
         <ImageView
@@ -19,7 +19,8 @@
             android:paddingBottom="8dp"
             android:paddingRight="12dp"
             android:paddingTop="8dp"
-            android:src="@drawable/back" />
+            android:src="@drawable/back"
+            android:tint="?attr/hnActionBarIconTint" />
 
         <TextView
             android:id="@+id/actionbar_title"
@@ -31,7 +32,7 @@
             android:shadowDy="-1"
             android:shadowRadius="1"
             android:text="@string/settings"
-            android:textColor="@android:color/white"
+            android:textColor="?attr/hnActionBarText"
             android:textSize="24sp" />
     </FrameLayout>
 
@@ -39,9 +40,9 @@
         android:id="@android:id/list"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:background="@color/peach"
-        android:cacheColorHint="@color/peach"
-        android:divider="#f0dfce"
+        android:background="?attr/hnBg"
+        android:cacheColorHint="?attr/hnBg"
+        android:divider="?attr/hnDivider"
         android:dividerHeight="1dp"
         android:fadingEdge="none" />
 

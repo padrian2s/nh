@@ -5,6 +5,7 @@
 
     <item android:id="@+id/menu_refresh"
         android:icon="@drawable/refresh"
+        hn:iconTint="?attr/hnActionBarIconTint"
         android:title="@string/refresh"
         hn:showAsAction="always" />
 

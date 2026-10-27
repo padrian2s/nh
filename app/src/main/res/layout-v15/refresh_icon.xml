@@ -7,7 +7,7 @@
 
     <ProgressBar
         style="?android:attr/indeterminateProgressStyle"
-        android:indeterminateTint="@color/dark_gray_post_title"
+        android:indeterminateTint="?attr/hnRefreshTint"
         android:indeterminateTintMode="src_atop"
         android:layout_width="32dp"
         android:layout_height="32dp"

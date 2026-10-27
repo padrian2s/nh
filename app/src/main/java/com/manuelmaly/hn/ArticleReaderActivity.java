@@ -8,9 +8,10 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.MenuItemCompat;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
+import androidx.webkit.WebSettingsCompat;
+import androidx.webkit.WebViewFeature;
 
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -24,6 +25,7 @@ import android.widget.TextView;
 import com.manuelmaly.hn.model.HNPost;
 import com.manuelmaly.hn.util.FontHelper;
 import com.manuelmaly.hn.util.SpotlightActivity;
+import com.manuelmaly.hn.util.ThemeHelper;
 import com.manuelmaly.hn.util.ViewedUtils;
 
 import org.androidannotations.annotations.AfterViews;
@@ -34,7 +36,7 @@ import org.androidannotations.annotations.ViewById;
 import java.net.URLEncoder;
 
 @EActivity(R.layout.article_activity)
-public class ArticleReaderActivity extends AppCompatActivity {
+public class ArticleReaderActivity extends ThemedActivity {
 
   public static final int ACTIVITY_LOGIN = 137;
 
@@ -86,6 +88,10 @@ public class ArticleReaderActivity extends AppCompatActivity {
     mWebView.getSettings().setUseWideViewPort( true );
     mWebView.getSettings().setJavaScriptEnabled( true );
     mWebView.setWebViewClient( new HNReaderWebViewClient() );
+    if (ThemeHelper.isDarkTheme( this )
+        && WebViewFeature.isFeatureSupported( WebViewFeature.ALGORITHMIC_DARKENING )) {
+      WebSettingsCompat.setAlgorithmicDarkeningAllowed( mWebView.getSettings(), true );
+    }
 
     if (mWebViewSavedState != null) {
       mWebView.restoreState( mWebViewSavedState );

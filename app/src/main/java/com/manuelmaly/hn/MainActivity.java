@@ -10,6 +10,7 @@ import com.manuelmaly.hn.task.HNVoteTask;
 import com.manuelmaly.hn.task.ITaskFinishedHandler;
 import com.manuelmaly.hn.util.FileUtil;
 import com.manuelmaly.hn.util.FontHelper;
+import com.manuelmaly.hn.util.ThemeHelper;
 
 import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.Background;
@@ -133,8 +134,8 @@ public class MainActivity extends BaseListActivity implements
 
         mEmptyListPlaceholder.setTypeface(FontHelper.getComfortaa(this, true));
 
-        mTitleColor = getResources().getColor(R.color.dark_gray_post_title);
-        mTitleReadColor = getResources().getColor(R.color.gray_post_title_read);
+        mTitleColor = ThemeHelper.getColor(this, R.attr.hnTitle);
+        mTitleReadColor = ThemeHelper.getColor(this, R.attr.hnTitleRead);
 
         toggleSwipeRefreshLayout();
 

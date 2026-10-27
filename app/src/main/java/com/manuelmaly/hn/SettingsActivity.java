@@ -18,6 +18,7 @@ import android.widget.ImageView;
 import com.manuelmaly.hn.login.LoginActivity_;
 import com.manuelmaly.hn.server.HNCredentials;
 import com.manuelmaly.hn.util.Run;
+import com.manuelmaly.hn.util.ThemeHelper;
 
 public class SettingsActivity extends PreferenceActivity implements OnSharedPreferenceChangeListener {
 
@@ -42,6 +43,10 @@ public class SettingsActivity extends PreferenceActivity implements OnSharedPref
     @Override
     @SuppressWarnings("deprecation")
     public void onCreate(Bundle savedInstanceState) {
+        if (ThemeHelper.isDarkTheme(this)) {
+            setTheme(android.R.style.Theme_Material_NoActionBar);
+        }
+        ThemeHelper.applyPalette(this);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.settings);
         addPreferencesFromResource(R.xml.preferences);
@@ -52,6 +57,9 @@ public class SettingsActivity extends PreferenceActivity implements OnSharedPref
 
         Preference htmlProviderPref = findPreference(Settings.PREF_HTMLPROVIDER);
         htmlProviderPref.setSummary(sharedPref.getString(Settings.PREF_HTMLPROVIDER, "Undefined"));
+
+        Preference themePref = findPreference(Settings.PREF_THEME);
+        themePref.setSummary(Settings.getTheme(this));
 
         Preference htmlViewerPref = findPreference(Settings.PREF_HTMLVIEWER);
         htmlViewerPref.setSummary(sharedPref.getString(Settings.PREF_HTMLVIEWER, "Undefined"));
@@ -87,7 +95,9 @@ public class SettingsActivity extends PreferenceActivity implements OnSharedPref
         Run.onUiThread(new Runnable() {
             @Override
             public void run() {
-                if (key.equals(Settings.PREF_FONTSIZE) || key.equals(Settings.PREF_HTMLPROVIDER)
+                if (key.equals(Settings.PREF_THEME))
+                    recreate();
+                else if (key.equals(Settings.PREF_FONTSIZE) || key.equals(Settings.PREF_HTMLPROVIDER)
                     || key.equals(Settings.PREF_HTMLVIEWER))
                     findPreference(key).setSummary(sharedPreferences.getString(key, "Undefined"));
                 else if (key.equals(Settings.PREF_USER)) {

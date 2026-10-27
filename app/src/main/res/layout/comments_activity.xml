@@ -14,9 +14,9 @@
             android:id="@+id/comments_list"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/peach"
-            android:cacheColorHint="@color/peach"
-            android:divider="@color/gray_comments_divider"
+            android:background="?attr/hnBg"
+            android:cacheColorHint="?attr/hnBg"
+            android:divider="?attr/hnDivider"
             android:dividerHeight="1dp"
             android:fadingEdge="none" />
 
