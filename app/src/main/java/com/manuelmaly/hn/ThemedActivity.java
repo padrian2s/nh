@@ -62,6 +62,8 @@ public class ThemedActivity extends AppCompatActivity {
         }
         // Switch live if the app stays open across the scheduled time
         mHandler.removeCallbacks(mThemeCheck);
-        mHandler.postDelayed(mThemeCheck, Settings.getMillisUntilThemeSwitch() + 1000);
+        if (Settings.isAutoTheme(this))
+            mHandler.postDelayed(mThemeCheck,
+                    Settings.getMillisUntilThemeSwitch() + 1000);
     }
 }

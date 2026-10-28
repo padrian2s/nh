@@ -16,10 +16,11 @@ public class Settings {
     public static final String PREF_PULLDOWNREFRESH = "pref_pulldownrefresh";
     public static final String PREF_THEME = "pref_theme";
     public static final String PREF_THEME_PERIOD = "pref_theme_period";
+    public static final String PREF_AUTOTHEME = "pref_autotheme";
 
-    // Between NIGHT_START_HOUR and NIGHT_END_HOUR the theme is reset to
-    // Gruvbox Dark, the rest of the day to Classic. A manual choice holds
-    // until the next switch.
+    // With automatic theme on, between NIGHT_START_HOUR and NIGHT_END_HOUR the
+    // theme is reset to Gruvbox Dark, the rest of the day to Classic. A manual
+    // choice holds until the next switch.
     public static final int NIGHT_START_HOUR = 0;
     public static final int NIGHT_END_HOUR = 8;
     private static final String PERIOD_NIGHT = "night";
@@ -45,7 +46,7 @@ public class Settings {
     public static String getTheme(Context c) {
         SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(c);
         String period = isNight() ? PERIOD_NIGHT : PERIOD_DAY;
-        if (!period.equals(sharedPref.getString(PREF_THEME_PERIOD, null))) {
+        if (isAutoTheme(c) && !period.equals(sharedPref.getString(PREF_THEME_PERIOD, null))) {
             String scheduledTheme = c.getString(period.equals(PERIOD_NIGHT)
                     ? R.string.pref_theme_gruvbox : R.string.pref_theme_classic);
             sharedPref.edit().putString(PREF_THEME, scheduledTheme)
@@ -53,6 +54,18 @@ public class Settings {
             return scheduledTheme;
         }
         return sharedPref.getString(PREF_THEME, c.getString(R.string.pref_default_theme));
+    }
+
+    public static boolean isAutoTheme(Context c) {
+        SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(c);
+        return sharedPref.getBoolean(PREF_AUTOTHEME,
+                c.getResources().getBoolean(R.bool.pref_default_autotheme));
+    }
+
+    /** Makes the automatic theme apply the current period's theme right away. */
+    public static void resetThemePeriod(Context c) {
+        SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(c);
+        sharedPref.edit().remove(PREF_THEME_PERIOD).commit();
     }
 
     public static boolean isNight() {

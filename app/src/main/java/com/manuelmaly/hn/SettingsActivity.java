@@ -97,6 +97,12 @@ public class SettingsActivity extends PreferenceActivity implements OnSharedPref
             public void run() {
                 if (key.equals(Settings.PREF_THEME))
                     recreate();
+                else if (key.equals(Settings.PREF_AUTOTHEME)) {
+                    if (Settings.isAutoTheme(SettingsActivity.this)) {
+                        Settings.resetThemePeriod(SettingsActivity.this);
+                        recreate();
+                    }
+                }
                 else if (key.equals(Settings.PREF_FONTSIZE) || key.equals(Settings.PREF_HTMLPROVIDER)
                     || key.equals(Settings.PREF_HTMLVIEWER))
                     findPreference(key).setSummary(sharedPreferences.getString(key, "Undefined"));

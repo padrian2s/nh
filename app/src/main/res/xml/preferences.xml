@@ -7,6 +7,11 @@
         android:entries="@array/pref_array_theme"
         android:entryValues="@array/pref_array_theme"
         android:defaultValue="@string/pref_default_theme" />
+    <CheckBoxPreference
+        android:key="pref_autotheme"
+        android:title="@string/pref_title_autotheme"
+        android:summary="@string/pref_summary_autotheme"
+        android:defaultValue="@bool/pref_default_autotheme" />
     <ListPreference
         android:key="pref_fontsize"
         android:title="@string/pref_title_fontsize"
